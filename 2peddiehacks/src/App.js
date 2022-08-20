@@ -1,6 +1,6 @@
 
 import HomePage from "./screens/pages/HomePage";
-import Test from "./screens/pages/test";
+import Main from "./screens/pages/Main";
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/test" element={<Test />} />
+        <Route path="/main" element={<Main />} />
       </Routes>
     </Router>
   );
