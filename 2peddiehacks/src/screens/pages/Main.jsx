@@ -1,8 +1,10 @@
 import logo from '../../static/logo.svg';
 import text from '../../static/placeholder.gif';
 import {Link} from 'react-router-dom';
-import Navbar from '../../components/Navbar'
 
+import Navbar from '../../components/Navbar'
+import Hero from '../../components/Hero'
+import Summarize from '../../components/Summarize'
 
 
 // import { Link } from "react-router-dom"
@@ -20,6 +22,9 @@ export default function HomePage() {
     return(
       <>
         <Navbar />
+        <Hero />
+        <Summarize/>
+
           <div className="h-screen flex">
           <div className="mt-2 flex w-1/2 justify-center items-center bg-white">
             <img className="pb-21"src={text} alt="streamline with us"></img>
