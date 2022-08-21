@@ -10,7 +10,7 @@ import Summarize from '../../components/Summarize'
 // import { Link } from "react-router-dom"
 
 
-export default function HomePage() {
+function Main() {
 
 
   // // const handleLinkClick = event => {
@@ -23,7 +23,6 @@ export default function HomePage() {
       <>
         <Navbar />
         <Hero />
-        <Summarize/>
 
           <div className="h-screen flex">
           <div className="mt-2 flex w-1/2 justify-center items-center bg-white">
@@ -57,3 +56,5 @@ export default function HomePage() {
       </>
     )
 }
+
+export default Main
