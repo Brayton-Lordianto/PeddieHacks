@@ -23,6 +23,7 @@ function Main() {
       <>
         <Navbar />
         <Hero />
+        <Summarize />
 
           <div className="h-screen flex">
           <div className="mt-2 flex w-1/2 justify-center items-center bg-white">
