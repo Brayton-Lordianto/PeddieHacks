@@ -1,10 +1,15 @@
 import {Link} from 'react-router-dom';
+import text from '../../static/1.png';
+
 
 function HomePage() {
     return (
         <>
         <div className="h-screen flex">
   <div className="flex w-1/2 bg-gradient-to-tr from-blue-800 to-blue-700 i justify-around items-center">
+  <div className="mt-2 flex w-1/2 justify-center items-center bg-white">
+            <img className="pb-21"src={text} alt="streamline with us"></img>
+          </div>
     <div>
       <h1 className="text-white font-bold text-4xl font-sans">Flow</h1>
       <p className="text-white mt-1">Streamline your student experience with us</p>
@@ -28,7 +33,7 @@ function HomePage() {
         <input className="pl-2 outline-none border-none" type="text" name="" id="" placeholder="Password" />
       </div>
       <Link to="/main">
-      <button type="submit" className="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2">Login</button>
+      <button type="submit" className="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2">Sign up</button>
 
         </Link>
       <span className="text-sm ml-2 hover:text-blue-500 cursor-pointer">Forgot Password ?</span>
