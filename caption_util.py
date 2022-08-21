@@ -2,7 +2,10 @@ import requests
 import youtube_dl
 
 auth_key = "10af5eedc9394a968ecec5f4fe153bcc" # os.environ["ASSEMBLY_API_TOKEN"]
-url = "https://www.youtube.com/watch?v=mC2DwdfA62E"
+# url = "https://www.youtube.com/watch?v=mC2DwdfA62E" # takes around 2 minutes
+# url = "https://www.youtube.com/watch?v=a7_WFUlFS94" # 30 seconds to download, only 1 chp
+# url = "https://www.youtube.com/watch?v=kdvVwGrV7ec" # took 
+url = "https://www.youtube.com/watch?v=lGx7oeiIlLM" # decent, best bet. 
 
 # ydl options
 ydl_opts = {
@@ -24,9 +27,10 @@ def download_from_yt(url):
             return ydl.extract_info(link)
     meta = get_extracted_info()
     save_location = meta['id'] + ".mp3"
+    duration = meta['duration']
     print('Saved mp3 to', save_location)
     
-    return save_location
+    return (save_location, duration)
 
 # to be used for uplaoding
 def read_file_data(file):
@@ -75,8 +79,8 @@ def process_url_id(audio_url):
     transcript_response = requests.post(transcript_endpoint, json=transcript_request, headers=headers)
     return transcript_response.json()['id']
 
-# get the actual chapters
-def getChapters(id):
+# get the processed data
+def getProcessedData(id):
     endpoint = f"https://api.assemblyai.com/v2/transcript/{id}"
     headers = {
         "authorization": auth_key,
@@ -86,11 +90,21 @@ def getChapters(id):
     while True:
         response = requests.get(endpoint, headers=headers).json()
         if response['status'] == 'completed': 
-            return response['chapters']
+            return response
+
+# get the whole transcript
+def getTranscript(id):
+    return getProcessedData(id)['text']
+
+# get the actual chapters
+def getChapters(id):
+    return getProcessedData(id)['chapters']
 
 # the whole thing bundled
 def getChaptersFrom(url):
-    save_location = download_from_yt(url)
+    save_location, duration = download_from_yt(url)
+    print(duration*2/5, 'seconds')
+    
     audio_url = upload_file(save_location)
     audio_id = process_url_id(audio_url)
     return getChapters(audio_id)
