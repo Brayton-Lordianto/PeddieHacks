@@ -1,0 +1,45 @@
+h1, 
+h2, 
+h3, 
+h4 {
+  color: #2886E7;
+}
+
+.App {
+  text-align: center;
+}
+
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.question {
+  display: flex;
+}
+
+.answer-container {
+  width: 680px;
+  height: 40vh;
+  margin-top: 5px;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1em;
+}
+
+.answers {
+  font-size: 0.6em;
+  text-align: left;
+}
