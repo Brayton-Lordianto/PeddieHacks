@@ -113,4 +113,4 @@ def main():
     print(getChaptersFrom(url))
     
 # run for tests
-# main()
+main()
