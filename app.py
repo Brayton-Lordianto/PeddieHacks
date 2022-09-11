@@ -84,7 +84,9 @@ def get_captions():
     return json.dumps({'chapters':captions}) # return it
     
     
-    
+@app.route("/")
+def get():
+    return 'HEllo worldß'
     
     
     

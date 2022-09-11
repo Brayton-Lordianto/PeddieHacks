@@ -7,7 +7,7 @@ function HomePage() {
         <>
         <div className="h-screen flex">
   <div className="flex w-1/2 bg-gradient-to-tr from-blue-800 to-blue-700 i justify-around items-center">
-  <div className="mt-2 flex w-1/2 justify-center items-center bg-white">
+  <div className="mt-2 flex w-1/2 justify-center items-center">
             <img className="pb-21"src={text} alt="streamline with us"></img>
           </div>
     <div>
